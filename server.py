@@ -14,8 +14,3 @@ class Server:
             client, addr = self.server.accept()
             thread = threading.Thread(target=ServerThread(client).process_request)
             thread.start()
-
-
-if __name__ == '__main__':
-    server = Server()
-    server.run()
