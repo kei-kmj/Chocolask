@@ -2,12 +2,12 @@ const form = document.querySelector('#form');
 const input = document.querySelector('#input');
 const todos = document.querySelector('#todos');
 
-// ページをロードしたときに、保存されているTODOアイテムを取得して表示する
+
 function loadTodos() {
-    fetch('/todos.json') // '/todos'はサーバのエンドポイントです
+    fetch('/todos.json')
         .then(response => response.json())
         .then(data => {
-            todos.innerHTML = ''; // clear the list before adding new items
+            todos.innerHTML = '';
             for (let item of data) {
                 const li = document.createElement('li');
                 li.textContent = item.task;
@@ -36,11 +36,11 @@ form.addEventListener('submit', function (event) {
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify(todo), // 新しいTODOアイテムのテキスト
+        body: JSON.stringify(todo),
     })
     .then(response => {
         if(response.ok){
-            loadTodos(); // reload todos list after successfully adding a new item
+            loadTodos();
         }else{
             throw new Error('Failed to add new todo')
         }

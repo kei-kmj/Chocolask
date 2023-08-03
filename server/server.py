@@ -1,6 +1,6 @@
 import socket
 import threading
-from server_thread import ServerThread
+from server.server_thread import ServerThread
 
 
 class Server:

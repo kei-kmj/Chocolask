@@ -1,4 +1,4 @@
-from router import Router
+from server.router import Router
 
 
 class ServerThread:

@@ -2,7 +2,7 @@ import os
 import json
 from pathlib import Path
 from dotenv import load_dotenv
-from response_generator import ResponseGenerator
+from server.response_generator import ResponseGenerator
 
 load_dotenv()
 
