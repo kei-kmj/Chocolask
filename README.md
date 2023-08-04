@@ -7,6 +7,10 @@ Chocolask is a lightweight, single-threaded web server written in Python. It ser
 - Can serve multiple types of files
 - Routes requests to appropriate handlers
 - Manages a simple TODO list (stored in a json file)
+## Environments
+- Python 3.9.2
+- WSL2
+- Debian 11
 ## Usage
 - Clone the repository
 - You need to create a `.env` file in the root directory of the project and define the necessary variables.
