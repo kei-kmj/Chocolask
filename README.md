@@ -13,6 +13,8 @@ Chocolask is a lightweight, single-threaded web server written in Python. It ser
   - `HOST_NAME`: The host name of the server
   - `PORT`: The port number of the server
   - `TODOS_ROOT`: The path to the directory where the TODO list is stored
+  - `BUFFER_SIZE`: The buffer size of the server
+  - `JSON_INDENT`: The indentation of the JSON file
 - Navigate to the cloned directory
 - Run python3 main.py
 - Open a web browser and go to localhost:8001
