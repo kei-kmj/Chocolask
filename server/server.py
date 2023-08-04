@@ -1,13 +1,19 @@
+import os
 import socket
 import threading
+from dotenv import load_dotenv
 from server.server_thread import ServerThread
+
+load_dotenv()
 
 
 class Server:
     def __init__(self):
         self.server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        self.server.bind(('', 8001))
-        self.server.listen(5)
+
+        port = int(os.getenv('PORT', 8001))
+        self.server.bind(('', port))
+        self.server.listen()
 
     def run(self):
         while True:

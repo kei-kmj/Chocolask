@@ -1,4 +1,8 @@
+import os
+from dotenv import load_dotenv
 from server.router import Router
+
+load_dotenv()
 
 
 class ServerThread:
@@ -15,7 +19,9 @@ class ServerThread:
         self.close()
 
     def recv(self):
-        data = self.client_socket.recv(4096).decode('utf-8')
+
+        buffer_size = int(os.getenv('BUFFER_SIZE', 4096))
+        data = self.client_socket.recv(buffer_size).decode('utf-8')
 
     # Separate the headers from the body
         headers_raw, body = data.split("\r\n\r\n", 1)

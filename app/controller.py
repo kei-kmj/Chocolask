@@ -46,7 +46,8 @@ class Controller:
             todos = []
 
         todos.append(new_todo)
+        json_indent = int(os.getenv('JSON_INDENT', 4))
         with open(todos_file_path, 'w') as file:
-            json.dump(todos, file, indent=4)
+            json.dump(todos, file, indent=json_indent)
 
         self.generate_response('200 OK', f"{self.TODOS_ROOT}/index.html")

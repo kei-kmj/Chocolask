@@ -24,7 +24,7 @@ class ResponseGenerator:
     def generate_response(self):
         response = "HTTP/1.0 {}\r\n".format(self.status_code)
         response += "Date: {}\r\n".format(time.strftime('%a, %d %b %Y %H:%M:%S GMT', time.gmtime()))
-        response += "Server: Chokolask/0.1\r\n"
+        response += "Server: Chocolask/0.1\r\n"
 
         if self.status_code.startswith('3'):
             response += "Location: http://{}:{}{}\r\n".format(self.host_name, self.port, self.file_path)
